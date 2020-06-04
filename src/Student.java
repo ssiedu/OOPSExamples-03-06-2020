@@ -1,4 +1,3 @@
-
 public class Student {
 
     private int rno;
@@ -6,12 +5,13 @@ public class Student {
     private int marks;
     private static int totalPassed, totalFailed;
     
-    public void showOverallResult(){
+    //displaying the overall result of the class
+    public static void showOverallResult(){
         System.out.println("Total Passed Candidates : "+totalPassed);
         System.out.println("Total Failed Candidates : "+totalFailed);
         System.out.println("==========================================================");
     }
-    //This method will print the report card of a student
+    //displaying the result of a student and maintaining the overall result also
     public void printResult() {
         System.out.println("Roll Number : " + rno);
         System.out.println("Name        : " + name);
@@ -25,13 +25,14 @@ public class Student {
         }
         System.out.println("________________________________________________________");
     }
-                        //113       CCC       30
+                  
+    //intializing the details of  a student object.
     public void setData(int x, String y, int z) {
         rno = x;        //here rno belongs to calling obj
         name = y;       //name belongs to calling obj
         marks = z;
     }
-
+    
     public static void main(String args[]) {
 
         Student s1 = new Student();
@@ -46,9 +47,8 @@ public class Student {
         s2.printResult();
         s3.printResult();
         
-        s1.showOverallResult();
-        //s2.showOverallResult();
-        //s3.showOverallResult();
+        Student.showOverallResult();
+        
     }
 
 }
