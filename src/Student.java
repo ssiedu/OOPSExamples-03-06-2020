@@ -5,6 +5,19 @@ public class Student {
     private int marks;
     private static int totalPassed, totalFailed;
     
+    //to display the grade of a student using this method.(A,B,C,D)
+    //to compute the grade we need marks (instance variable)
+    
+    public static void showGrade(Student st){
+        if(st.marks>=90){
+            System.out.println("GRADE OF "+st.rno+" IS A");
+        }else if(st.marks>=80){
+            System.out.println("GRADE OF "+st.rno+" IS B");
+        }else{
+            System.out.println("GRADE OF "+st.rno+" IS C");
+        }
+    }
+    
     //displaying the overall result of the class
     public static void showOverallResult(){
         System.out.println("Total Passed Candidates : "+totalPassed);
@@ -39,16 +52,23 @@ public class Student {
         Student s2 = new Student();
         Student s3 = new Student();
         
-        s1.setData(111, "AAA", 50);
-        s2.setData(112, "BBB", 60);
+        s1.setData(111, "AAA", 90);
+        s2.setData(112, "BBB", 80);
         s3.setData(113, "CCC", 30);
 
+        Student.showGrade(s1);
+        Student.showGrade(s2);
+        Student.showGrade(s3);
+        //s1.showGrade();
+        //s2.showGrade();
+        //s3.showGrade();
+        /*
         s1.printResult();
         s2.printResult();
         s3.printResult();
         
         Student.showOverallResult();
-        
+        */
     }
 
 }
