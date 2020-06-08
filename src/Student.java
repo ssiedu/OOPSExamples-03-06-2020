@@ -4,7 +4,7 @@ public class Student {
     private String name;
     private int marks;
     private static int totalPassed, totalFailed;
-
+   
     public static void showAvg(Student st1, Student st2, Student st3){
             System.out.println("Avg of 3 : "+(st1.marks+st2.marks+st3.marks)/3);
     }
@@ -63,6 +63,7 @@ public class Student {
         s2.setData(112, "BBB", 80);
         s3.setData(113, "CCC", 30);
         
+        Student.showAvg(s1,s2);
         Student.showAvg(s1,s2,s3);
         
         //s3.showAvg(s1);
