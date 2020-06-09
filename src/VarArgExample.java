@@ -1,23 +1,51 @@
 
 public class VarArgExample {
 
-    public static void add(int...v){
+    public static void add(){
+        System.out.println("NOTHING TO ADD");
+    }
+    public static void add(int x, int y){
+        System.out.println("SUM = "+(x+y));
+    }
+    public static void add(String... v){
+        String res="";
+        for(String s:v){
+            res=res+s;
+        }
+        System.out.println(res);
+    }
+    public static void add(int... v){
         int sum=0;
+        for(int i=0; i<v.length; i++){
+            sum=sum+v[i];
+        }
+        /*
         for(int n:v){
             sum=sum+n;
         }
+        */
         System.out.println(sum);
     }
     
-    public static void main(String[] args) {
+    public static void main(String... args) {
    
-        add(10,20,30);  //{10,20,30}
+        add();
+        
+        add(10,20);//(int,int)      (int...)
+        
+        add(10,20,30);
         add(10,20,30,40);
-        add(1,2,3,4,5,6,7,8,9,10);  //{1,2,3,4,5,6,7,8,9,10}
+        
+        add("aa","bb");
+        add("xx","yy","zz");
     }
 }
 /*
-    for the above requirement , we can write 5 add methods (overloading)
-    or
-    we can write an add method using varargs.
+    for using varargs
+
+    1) only one varargs per method is allowed.
+    2) but you can take normal parameter with varargs
+    3) varargs must be on last place (no parameter is allowed after varargs)
+    4) varargs methods can be overloaded.
+    5) exact match will always have a preference over varargs.
 */
