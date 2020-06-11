@@ -26,6 +26,19 @@ Constructors
 7) constructors are mainly used for initilization purpose. initializing properties during object creation
    itself. 
 8) java do not supports copy constructor (clone object create).
-9) 
+9) one constructor can explicitly call another constructor using this keyword.
+    
+        for using this keyword for calling a constructor.
+        -----------------------------------------------------
+
+        1) matching constructor must exists.
+        2) this must be the 1st statement in constructor.
+        3) we cant call more than one constructor directly
+        4) chaining is allowed
+        5) recursive calls are not allowed for constructors.
+        6) only a constructor can call another constructor (we cant call a constructor in a method)
+        
+
+
 
  */
