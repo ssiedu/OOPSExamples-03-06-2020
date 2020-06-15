@@ -1,44 +1,31 @@
 
 public class Demo {
 
-    int x, y;           //instance (non-static)
-    static int p, q;    //class     (static)
-    static final int MAX=100;
+    private int x, y;
+    
+    public void show(){
+        System.out.println(x+","+y);
+    }
+    
+    public Demo(int a, int b){
+        x=a; y=b;
+    }
     
     public static void main(String[] args) {
-
-        //instantiating Demo class  (new keyword) (object creation)
-        
-        Demo d1=new Demo();
-        Demo d2=new Demo();
-        Demo d3=new Demo();
-        d1.x=10; d2.x=20; d3.x=30;
-        System.out.println(d1.x);
-        System.out.println(d2.x);
-        System.out.println(d3.x);
-        System.out.println("___________________________________________");
-        d1.p=100;
-        d2.p=200;
-        d3.p=300;
-        System.out.println(d1.p);
-        System.out.println(d2.p);
-        System.out.println(d3.p);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        Demo d1;                    //declaring a reference of type Demo
+        new Demo(10,20);            //object created but address is not stored in any ref (cant be accessed)
+        Demo d2=new Demo(30,40);
+        Demo d3=d2;
+        d1=d3;
+        System.out.println(d1.x+","+d1.y);
+        System.out.println(d2.x+","+d2.y);
+        System.out.println(d3.x+","+d3.y);
+        System.out.println("_________________________________________");
+        d3=new Demo(50,60);
+        d2=d3;
+        System.out.println(d1.x+","+d1.y);
+        System.out.println(d2.x+","+d2.y);
+        System.out.println(d3.x+","+d3.y);
+       
     }
-
 }
