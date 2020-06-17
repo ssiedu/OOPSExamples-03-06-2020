@@ -13,7 +13,9 @@ public class Demo {
     }
     
     public void show(){
-        System.out.println(x+","+y);
+        int x=55;
+        System.out.println(this.x+","+this.y);    // x and y belongs to calling object (instance)
+        //System.out.println(this.x+","+this.y);//x and y belongs to this object (invoking object)
     }
     
     public Demo(int a, int b){
@@ -22,7 +24,14 @@ public class Demo {
     
     public static void main(String[] args) {
         
-       
+        Demo d1=new Demo(10,20);
+        Demo d2=new Demo(30,40);
+        d1.show();
+        d2.show();
+        
+        
+        
+       /*
         Demo d1=new Demo(10,20);
         Demo d2=new Demo(10,20);
         Demo d3=d2;
@@ -32,7 +41,7 @@ public class Demo {
         
         boolean res2=d1.equals(d2);
         System.out.println(res2);
-        
+        */
         /*
         Demo d1;                    //declaring a reference of type Demo
         new Demo(10,20);            //object created but address is not stored in any ref (cant be accessed)
